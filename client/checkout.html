@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout | Aesthetique</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo">Aesthetique.</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/products.html">Shop</a></li>
+        </ul>
+        <a href="/cart.html" class="cart-icon">Back to Cart</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="checkout-form">
+      <h1 style="margin-bottom:30px">Checkout</h1>
+      <div style="background:#f9f9f9;padding:20px;margin-bottom:30px">
+        <h3>Order Summary</h3>
+        <p style="margin-top:10px">Total: <strong id="order-total">$0.00</strong></p>
+      </div>
+
+      <form id="checkout-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        <div class="form-group">
+          <label for="address">Shipping Address</label>
+          <textarea id="address" name="address" rows="3" required></textarea>
+        </div>
+        
+        <button type="submit" class="btn" style="width:100%">Place Order</button>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

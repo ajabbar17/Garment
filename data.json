@@ -1,0 +1,200 @@
+{
+  "products": [
+    {
+      "id": "1",
+      "name": "NOIR MESH TEE",
+      "description": "Architectural mesh construction with raw hem detailing.",
+      "price": 85,
+      "image": "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?q=80&w=1000",
+      "category": "TOPS",
+      "stock": 50
+    },
+    {
+      "id": "2",
+      "name": "SCULPTED LINEN TROUSER",
+      "description": "High-waisted architectural silhouette in heavy Italian linen.",
+      "price": 245,
+      "image": "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?q=80&w=1000",
+      "category": "BOTTOMS",
+      "stock": 30
+    },
+    {
+      "id": "3",
+      "name": "MONO KNIT PULLOVER",
+      "description": "Dense-knit recycled cashmere with exaggerated proportions.",
+      "price": 320,
+      "image": "https://images.unsplash.com/photo-1576566588028-4147f3842f27?q=80&w=1000",
+      "category": "TOPS",
+      "stock": 20
+    },
+    {
+      "id": "4",
+      "name": "STRUCTURED WOOL COAT",
+      "description": "Double-faced virgin wool with sharp, precise tailoring.",
+      "price": 580,
+      "image": "https://images.unsplash.com/photo-1539533018447-63fcce6671b3?q=80&w=1000",
+      "category": "OUTERWEAR",
+      "stock": 15
+    },
+    {
+      "id": "5",
+      "name": "SILK COLUMN DRESS",
+      "description": "Floor-length sand-washed silk with a fluid drape.",
+      "price": 450,
+      "image": "https://images.unsplash.com/photo-1595777457583-95e059d581b8?q=80&w=1000",
+      "category": "DRESSES",
+      "stock": 25
+    },
+    {
+      "id": "6",
+      "name": "SELVEDGE DENIM 01",
+      "description": "14oz Japanese raw denim, straight-cut classic.",
+      "price": 210,
+      "image": "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?q=80&w=1000",
+      "category": "BOTTOMS",
+      "stock": 40
+    },
+    {
+      "id": "7",
+      "name": "ARCHIVE TOTE",
+      "description": "Heavyweight waxed cotton with industrial hardware.",
+      "price": 165,
+      "image": "https://images.unsplash.com/photo-1544816153-12ad5d7133a2?q=80&w=1000",
+      "category": "ACCESSORIES",
+      "stock": 60
+    },
+    {
+      "id": "8",
+      "name": "BRUTALIST BOOT",
+      "description": "Polished calfskin with a chunky, geometric sole.",
+      "price": 395,
+      "image": "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?q=80&w=1000",
+      "category": "SHOES",
+      "stock": 12
+    },
+    {
+      "id": "9",
+      "name": "RIBBED SILK POLO",
+      "description": "Technical silk rib with a seamless finish.",
+      "price": 185,
+      "image": "https://images.unsplash.com/photo-1626497748470-281923f99025?q=80&w=1000",
+      "category": "TOPS",
+      "stock": 35
+    },
+    {
+      "id": "10",
+      "name": "MODULAR SHORT",
+      "description": "Technical nylon with multi-pocket system.",
+      "price": 145,
+      "image": "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?q=80&w=1000",
+      "category": "BOTTOMS",
+      "stock": 45
+    },
+    {
+      "id": "11",
+      "name": "DOWN PUFFER VEST",
+      "description": "Hyper-matte shell with premium fill.",
+      "price": 295,
+      "image": "https://images.unsplash.com/photo-1620934508433-4f51457186d1?q=80&w=1000",
+      "category": "OUTERWEAR",
+      "stock": 18
+    },
+    {
+      "id": "12",
+      "name": "HEAVY JERSEY TEE",
+      "description": "300gsm organic cotton, boxy cropped fit.",
+      "price": 95,
+      "image": "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=1000",
+      "category": "TOPS",
+      "stock": 55
+    },
+    {
+      "id": "13",
+      "name": "ASYMMETRIC SKIRT",
+      "description": "Geometric construction in technical wool.",
+      "price": 265,
+      "image": "https://images.unsplash.com/photo-1583337130417-3346a1be7dee?q=80&w=1000",
+      "category": "BOTTOMS",
+      "stock": 22
+    },
+    {
+      "id": "14",
+      "name": "PRECISION SHIRT",
+      "description": "Laser-cut seams, concealed placket, fine poplin.",
+      "price": 195,
+      "image": "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?q=80&w=1000",
+      "category": "TOPS",
+      "stock": 30
+    },
+    {
+      "id": "15",
+      "name": "MINIMAL DERBY",
+      "description": "Single-piece leather construction, matte finish.",
+      "price": 340,
+      "image": "https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?q=80&w=1000",
+      "category": "SHOES",
+      "stock": 15
+    },
+    {
+      "id": "16",
+      "name": "MERINO BALACLAVA",
+      "description": "Seamless 3D knit in ultra-fine merino.",
+      "price": 110,
+      "image": "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?q=80&w=1000",
+      "category": "ACCESSORIES",
+      "stock": 80
+    },
+    {
+      "id": "17",
+      "name": "CARGO PANT V2",
+      "description": "Integrated belt system, articulated knees.",
+      "price": 285,
+      "image": "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?q=80&w=1000",
+      "category": "BOTTOMS",
+      "stock": 28
+    },
+    {
+      "id": "18",
+      "name": "DENIM SHELL",
+      "description": "Overdyed denim with structural stitching.",
+      "price": 310,
+      "image": "https://images.unsplash.com/photo-1551537482-f2075a1d41f2?q=80&w=1000",
+      "category": "OUTERWEAR",
+      "stock": 20
+    },
+    {
+      "id": "19",
+      "name": "CONCEPT GRAPHIC",
+      "description": "Abstract typography on heavy tech-jersey.",
+      "price": 125,
+      "image": "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?q=80&w=1000",
+      "category": "TOPS",
+      "stock": 40
+    },
+    {
+      "id": "20",
+      "name": "LINEN OVER-SHIRT",
+      "description": "Boxy fit with oversized utilitarian pockets.",
+      "price": 225,
+      "image": "https://images.unsplash.com/photo-1598033129183-c4f50c7176c8?q=80&w=1000",
+      "category": "TOPS",
+      "stock": 35
+    }
+  ],
+  "orders": [
+    {
+      "customerName": "Wahab",
+      "email": "fa22-bse-158@cuilahore.edu.pk",
+      "address": "sada",
+      "items": [
+        {
+          "productId": "1",
+          "quantity": 1
+        }
+      ],
+      "total": 85,
+      "id": "f6a758b1-4bc1-4050-82ad-d52fc2bd11a8",
+      "createdAt": "2026-01-20T20:31:22.888Z"
+    }
+  ]
+}

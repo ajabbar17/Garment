@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin | Aesthetique</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div id="login-view" class="container" style="padding-top:100px;max-width:400px">
+    <h1>Admin Login</h1>
+    <form id="login-form" style="margin-top:20px">
+      <div class="form-group">
+        <label>Username</label>
+        <input type="text" name="username" required>
+      </div>
+      <div class="form-group">
+        <label>Password</label>
+        <input type="password" name="password" required>
+      </div>
+      <button type="submit" class="btn" style="width:100%">Login</button>
+    </form>
+  </div>
+
+  <div id="admin-view" class="container admin-dashboard" style="display:none">
+    <div class="admin-header">
+      <h1>Dashboard</h1>
+      <button id="logout-btn" class="btn-outline">Logout</button>
+    </div>
+
+    <div style="margin-bottom:40px">
+      <h3>Add New Product</h3>
+      <form id="add-product-form" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;background:#f9f9f9;padding:20px;margin-top:10px">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" name="name" required>
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <input type="text" name="category" required>
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          <input type="number" step="0.01" name="price" required>
+        </div>
+        <div class="form-group">
+          <label>Image URL</label>
+          <input type="url" name="image" required>
+        </div>
+        <div class="form-group" style="grid-column:span 2">
+          <label>Description</label>
+          <textarea name="description" required></textarea>
+        </div>
+        <button type="submit" class="btn" style="grid-column:span 2">Add Product</button>
+      </form>
+    </div>
+
+    <h3>Products</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="admin-products">
+        <!-- Injected -->
+      </tbody>
+    </table>
+
+    <h3 style="margin-top:60px">Orders</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Customer</th>
+          <th>Total</th>
+          <th>Date</th>
+        </tr>
+      </thead>
+      <tbody id="admin-orders">
+        <!-- Injected -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Admin Script Inline for simplicity
+    const api = {
+      login: async (creds) => {
+        const res = await fetch('/api/admin/login', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(creds)
+        });
+        if (!res.ok) throw new Error('Failed');
+        return res.json();
+      },
+      check: async () => {
+        const res = await fetch('/api/admin/check');
+        return res.json();
+      },
+      getProducts: async () => (await fetch('/api/products')).json(),
+      addProduct: async (data) => {
+        await fetch('/api/products', {
+          method: 'POST',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify(data)
+        });
+      },
+      deleteProduct: async (id) => {
+        await fetch(`/api/products/${id}`, { method: 'DELETE' });
+      },
+      getOrders: async () => (await fetch('/api/orders')).json(),
+      logout: async () => {
+         await fetch('/api/admin/logout', { method: 'POST' });
+         window.location.reload();
+      }
+    };
+
+    async function initAdmin() {
+      const { isAdmin } = await api.check();
+      if (!isAdmin) return;
+
+      document.getElementById('login-view').style.display = 'none';
+      document.getElementById('admin-view').style.display = 'block';
+      loadDashboard();
+    }
+
+    async function loadDashboard() {
+      const products = await api.getProducts();
+      const orders = await api.getOrders();
+
+      const tbody = document.getElementById('admin-products');
+      tbody.innerHTML = products.map(p => `
+        <tr>
+          <td>${p.name}</td>
+          <td>$${p.price}</td>
+          <td>${p.stock}</td>
+          <td class="admin-actions">
+            <button class="delete-btn" onclick="deleteProd('${p.id}')" style="color:white;border:none;cursor:pointer">Delete</button>
+          </td>
+        </tr>
+      `).join('');
+
+      const ordersBody = document.getElementById('admin-orders');
+      ordersBody.innerHTML = orders.map(o => `
+        <tr>
+          <td>${o.id.slice(0,8)}...</td>
+          <td>${o.customerName}</td>
+          <td>$${o.total.toFixed(2)}</td>
+          <td>${new Date(o.createdAt).toLocaleDateString()}</td>
+        </tr>
+      `).join('');
+    }
+
+    // Handlers
+    document.getElementById('login-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      try {
+        await api.login(Object.fromEntries(fd));
+        initAdmin();
+      } catch {
+        alert('Invalid credentials');
+      }
+    };
+
+    document.getElementById('add-product-form').onsubmit = async (e) => {
+      e.preventDefault();
+      const fd = new FormData(e.target);
+      const data = Object.fromEntries(fd);
+      data.price = parseFloat(data.price);
+      data.stock = 10; // Default
+      
+      await api.addProduct(data);
+      e.target.reset();
+      loadDashboard();
+    };
+
+    document.getElementById('logout-btn').onclick = api.logout;
+
+    window.deleteProd = async (id) => {
+      if(confirm('Delete this product?')) {
+        await api.deleteProduct(id);
+        loadDashboard();
+      }
+    };
+
+    initAdmin();
+  </script>
+</body>
+</html>

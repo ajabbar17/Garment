@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cart | Aesthetique</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo">Aesthetique.</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/products.html">Shop</a></li>
+          <li><a href="/admin.html">Admin</a></li>
+        </ul>
+        <a href="/cart.html" class="cart-icon">
+          Cart
+          <span id="cart-count" class="cart-count" style="display:none">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="cart-page">
+    <h1 style="margin-bottom:30px">Shopping Cart</h1>
+    <div id="cart-items">
+      <!-- Injected JS -->
+    </div>
+    <div class="cart-total">
+      Total: <span id="cart-total">$0.00</span>
+    </div>
+    <a href="/checkout.html" id="checkout-btn" class="btn checkout-btn">Proceed to Checkout</a>
+  </main>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>

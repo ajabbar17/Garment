@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product | Aesthetique</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="container">
+      <nav>
+        <a href="/" class="logo">Aesthetique.</a>
+        <ul class="nav-links">
+          <li><a href="/">Home</a></li>
+          <li><a href="/products.html">Shop</a></li>
+          <li><a href="/admin.html">Admin</a></li>
+        </ul>
+        <a href="/cart.html" class="cart-icon">
+          Cart
+          <span id="cart-count" class="cart-count" style="display:none">0</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div class="product-detail">
+      <div>
+        <img id="product-image" src="" alt="" class="detail-image">
+      </div>
+      <div class="detail-info">
+        <div id="product-category" class="detail-category"></div>
+        <h1 id="product-name" class="detail-name"></h1>
+        <div id="product-price" class="detail-price"></div>
+        <p id="product-description" class="detail-description"></p>
+        
+        <div class="quantity-selector">
+          <span>Quantity</span>
+          <button class="qty-btn" id="qty-minus">-</button>
+          <input type="text" id="qty" value="1" style="width:40px;text-align:center;border:none;font-family:inherit" readonly>
+          <button class="qty-btn" id="qty-plus">+</button>
+        </div>
+
+        <button id="add-to-cart" class="btn" style="width:100%">Add to Cart</button>
+      </div>
+    </div>
+  </main>
+
+  <script type="module" src="/js/main.js"></script>
+</body>
+</html>
